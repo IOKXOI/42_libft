@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: oklm <oklm@student.42.fr>                  +#+  +:+       +#+         #
+#    By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 05:59:28 by sydauria          #+#    #+#              #
-#    Updated: 2021/12/15 22:35:59 by oklm             ###   ########.fr        #
+#    Updated: 2022/07/31 19:46:45 by sydauria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,12 +25,14 @@ FD = ft_putstr_fd.c ft_putchar_fd.c ft_putnbr_fd.c ft_putendl_fd.c
 BONUS = ft_lstnew.c ft_lstsize.c ft_lstlast.c ft_lstadd_front.c \
 		ft_lstadd_back.c ft_lstiter.c ft_lstmap.c ft_lstdelone.c ft_lstclear.c
 
+GNL = ./gnl/get_next_line.c ./gnl/get_next_line_utils.c 
+
 NAME=libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 
-SRC = $(CHAR) $(STR) $(MEM) $(FD)
+SRC = $(CHAR) $(STR) $(MEM) $(FD) $(GNL)
 OBJ= $(SRC:.c=.o)
 BONUS_OBJS	= ${BONUS:.c=.o}
 
@@ -51,7 +53,11 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
+mclean: all clean
+
 re: fclean all
+
+.PHONY: all bonus .c.o clean fclean mclean
 
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)

@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 09:50:32 by sydauria          #+#    #+#             */
-/*   Updated: 2022/07/10 23:25:40 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/26 07:33:35 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,12 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "../libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t size);
 char	*stop_condition(int fd, size_t nb, char *valid_line, char **buffer);
 char	*extract_str(char *buffer, ssize_t *new_line);
 char	*get_remainder(ssize_t *problem, ssize_t *exit_loop, char *buffer);
-char	*get_next_line(int fd);
 char	*ft_strjoin_and_free(char *actual_line, char *temp);
-char	*ft_strndup(char *buffer, int n);
-size_t	ft_strlen(char *str);
 ssize_t	create_and_fill_buffer(int fd, char **buffer);
 
 #endif

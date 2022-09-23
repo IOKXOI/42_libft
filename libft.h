@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 04:35:12 by sydauria          #+#    #+#             */
-/*   Updated: 2022/01/10 19:02:42 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/26 07:36:16 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int		ft_tolower(int c);
 
 char	*ft_itoa(int n);
 char	*ft_strdup(const char *s);
+char	*ft_strndup(char *buffer, size_t n);
 char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 char	*ft_strchr(const char *src, int tofind);
 char	*ft_strrchr(const char *src, int tofind);

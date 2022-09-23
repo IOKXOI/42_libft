@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 17:00:40 by sydauria          #+#    #+#             */
-/*   Updated: 2022/01/10 18:58:24 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/26 07:35:43 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int	len_to_sep(char *str, char c)
 	return (i);
 }
 
-static char	*ft_strndup(const char *str, size_t n)
+static char	*ft_strndup_split(const char *str, size_t n)
 {
 	char	*copy;
 	size_t	i;
@@ -88,7 +88,7 @@ char	**ft_split(char const *s, char c)
 		len = len_to_sep((char *)s, c);
 		if (len == 0)
 			return (tab);
-		tab[i] = ft_strndup(s, len);
+		tab[i] = ft_strndup_split(s, len);
 		if (tab[i] == NULL)
 			return (free_all(tab, i));
 		s = (s + len);

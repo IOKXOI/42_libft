@@ -6,7 +6,7 @@
 #    By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 05:59:28 by sydauria          #+#    #+#              #
-#    Updated: 2022/07/31 19:46:45 by sydauria         ###   ########.fr        #
+#    Updated: 2022/09/23 23:06:52 by sydauria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CHAR = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isprint.c ft_isascii.c \
 
 STR = ft_strlen.c ft_strjoin.c ft_split.c ft_strtrim.c ft_substr.c ft_strnstr.c \
 		ft_strchr.c ft_strrchr.c ft_strncmp.c ft_strlcpy.c ft_strlcat.c \
-		ft_strdup.c ft_strmapi.c ft_striteri.c ft_atoi.c ft_itoa.c 
+		ft_strdup.c ft_strndup.c ft_strmapi.c ft_striteri.c ft_atoi.c ft_itoa.c
 
 MEM = ft_bzero.c ft_calloc.c ft_memset.c ft_memcpy.c ft_memmove.c ft_memchr.c \
 		ft_memcmp.c 
@@ -48,17 +48,12 @@ bonus: ${OBJ} ${BONUS_OBJS}
 	gcc $(CFLAGS) -I . -c $< -o $(<:.c=.o)
 
 clean:
-	rm -rf *.o
+	rm -rf $(OBJ) $(BONUS_OBJS)
 
 fclean: clean
 	rm -rf $(NAME)
 
-mclean: all clean
+re: fclean 
+	make all
 
-re: fclean all
-
-.PHONY: all bonus .c.o clean fclean mclean
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) ${BONUS_OBJS}
+.PHONY: all bonus .c.o clean fclean re so

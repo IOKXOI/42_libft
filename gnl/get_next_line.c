@@ -6,11 +6,12 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 09:04:39 by sydauria          #+#    #+#             */
-/*   Updated: 2022/09/23 23:03:14 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/09/23 23:07:34 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
+#include "../libft.h"
 
 static ssize_t	create_and_fill_buffer(int fd, char **buffer)
 {
